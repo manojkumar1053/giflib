@@ -30,10 +30,10 @@ public class CategoryController {
     @RequestMapping("/category/{id}")
     public String category(@PathVariable int id, ModelMap modelMap) {
         Category category = categoryRepository.findById(id);
-        modelMap.put("category",category);
+        modelMap.put("category", category);
 
         List<Gif> gifs = gifRepository.findByCategoryId(id);
-        modelMap.put("gifs",gifs);
+        modelMap.put("gifs", gifs);
 
         return "category";
     }
